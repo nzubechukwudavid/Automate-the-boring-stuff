@@ -90,6 +90,15 @@ def checkBoard(board):
     else:
         return (False, "")
 
+#function to switch turns
+def switchTurn(turn):
+    if turn == "X" :
+        turn = "O"
+        return turn
+    else:
+        turn = 'X'
+        return turn
+
 
 #Who gets to go first?
 turn = randint(0,1)
@@ -126,12 +135,6 @@ for i in range(9):
     else:
         pass
 
-#Switch turns
-    if turn == "X" :
-        turn = "O"
-
-    else:
-        turn = 'X'
-
+    switchTurn(turn)
 
 print('Thank you.')
