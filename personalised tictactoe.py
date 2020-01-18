@@ -14,12 +14,14 @@ theBoard = {'top-l': ' ', 'top-m': ' ', 'top-r': ' ',
 
 #Function to output the current board data
 def printBoard(board):
-    print(board['top-l'] + '|' + board['top-m'] + '|' + board['top-r'])
-    print('-+-+-')
-    print(board['mid-l'] + '|' + board['mid-m'] + '|' + board['mid-r'])
-    print('-+-+-')
-    print(board['low-l'] + '|' + board['low-m'] + '|' + board['low-r'])
-
+    pad = "     "
+    print()
+    print(pad, board['top-l'] + '|' + board['top-m'] + '|' + board['top-r'])
+    print(pad, '-+-+-')
+    print(pad, board['mid-l'] + '|' + board['mid-m'] + '|' + board['mid-r'])
+    print(pad,'-+-+-')
+    print(pad, board['low-l'] + '|' + board['low-m'] + '|' + board['low-r'])
+    print()
 #Function to check for a winner
 def checkBoard(board):
 
@@ -115,7 +117,7 @@ for i in range(9):
     printBoard(theBoard)
     print('Turn for ' + turn + '. Move on which space?')
     
-#Raise an error if input isnt acceptable. Will modify input system later
+#Raise an error if input isn't acceptable. Will modify input system later
     try:
         move = input().lower()
         assert (move in theBoard)
