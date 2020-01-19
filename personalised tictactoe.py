@@ -1,5 +1,5 @@
 #AUTHOR : Morah David
-#AUTHOR'S NOTE : with what i learnt of dictionaries, im trying to represent a data structure for the tic tac toe game.
+#AUTHOR'S_NOTE : with what i learnt of dictionaries, im trying to represent a data structure for the tic tac toe game.
 #VERSION : 1.2
 #LAST EDITED : 1:18:2020 
 
