@@ -1,3 +1,4 @@
+#! Python
 import sys
 spam = ['apples', 'bananas', 'tofu', 'cats']
 

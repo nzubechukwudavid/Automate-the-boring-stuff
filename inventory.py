@@ -1,3 +1,5 @@
+#! Python
+
 # Write a function named displayInventory() that would take any possible
 # “inventory” and display it like the following:
 # Inventory:
