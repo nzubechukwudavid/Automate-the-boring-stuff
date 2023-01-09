@@ -8,10 +8,10 @@ while True:
         break
 
     if name in birthdays:
-        print(birthdays[name] + "is the birthday of " + name)
+        print(birthdays[name] + " is the birthday of " + name)
     else:
         print("I do not have birthday information for " + name)
         print("What is their birthday?")
-        bday = input()
-        birthdays[name] = bday
+        b_day = input()
+        birthdays[name] = b_day
         print("Birthday database updated.")
