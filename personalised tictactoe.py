@@ -4,23 +4,22 @@
 # LAST EDITED : 1:18:2020
 
 from random import randint
-import sys
 
 # Data Structure for TIC TAC TOE
-theBoard = {'top-l': ' ', 'top-m': ' ', 'top-r': ' ',
-            'mid-l': ' ', 'mid-m': ' ', 'mid-r': ' ',
-            'low-l': ' ', 'low-m': ' ', 'low-r': ' '}
+theBoard = {'top-l': '1', 'top-m': '2', 'top-r': '3',
+            'mid-l': '4', 'mid-m': '5', 'mid-r': '6',
+            'low-l': '7', 'low-m': '8', 'low-r': '9'}
 
 
 # Function to output the current board data
 def printBoard(board):
-    pad = "     "
+    pad = " "
     print()
-    print(pad, board['top-l'] + '|' + board['top-m'] + '|' + board['top-r'])
-    print(pad, '-+-+-')
-    print(pad, board['mid-l'] + '|' + board['mid-m'] + '|' + board['mid-r'])
-    print(pad, '-+-+-')
-    print(pad, board['low-l'] + '|' + board['low-m'] + '|' + board['low-r'])
+    print(pad, board['top-l'], '|', board['top-m'], '|', board['top-r'], sep=pad)
+    print(pad, '---', '+', '---', '+', '---', sep="")
+    print(pad, board['mid-l'], '|', board['mid-m'], '|', board['mid-r'], sep=pad)
+    print(pad, '---', '+', '---', '+', '---', sep="")
+    print(pad, board['low-l'], '|', board['low-m'], '|', board['low-r'], sep=pad)
     print()
 
 
@@ -95,13 +94,13 @@ def checkBoard(board):
 
 
 # function to switch turns
-def switchTurn(currentTurn):
-    if currentTurn == "X":
-        currentTurn = "O"
-        return currentTurn
+def switchTurn(current_turn):
+    if current_turn == "X":
+        current_turn = "O"
+        return current_turn
     else:
-        currentTurn = "X"
-        return currentTurn
+        current_turn = "X"
+        return current_turn
 
 
 # Who gets to go first?
@@ -126,12 +125,16 @@ for i in range(9):
     # I'm going to try to finish this project.
     # I hope that this will help to spur me on with my journey.
 
+    # input system:
     move = eval(input("Enter your move (1-9)"))
 
     try:
         move = possibleMoves.get(move)
     except KeyError:
         print("Invalid move! \n")
+        move = eval(input("Enter your move (1-9)"))
+
+    possibleMoves
 
     theBoard[move] = turn
 
