@@ -126,15 +126,16 @@ for i in range(9):
     # I hope that this will help to spur me on with my journey.
 
     # input system:
-    move = eval(input("Enter your move (1-9)"))
-
-    try:
-        move = possibleMoves.get(move)
-    except KeyError:
-        print("Invalid move! \n")
+    while True:
         move = eval(input("Enter your move (1-9)"))
+        if move in possibleMoves.keys():
+            played_move = move
+            move = possibleMoves.get(move)
 
-    possibleMoves
+            del possibleMoves[played_move]
+            break
+        else:
+            print("Invalid move!")
 
     theBoard[move] = turn
 
