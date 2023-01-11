@@ -116,6 +116,7 @@ possibleMoves = {1: "top-l", 2: "top-m", 3: "top-r",
                  7: "low-l", 8: "low-m", 9: "low-r"}
 
 # Gameplay
+
 for i in range(9):
     printBoard(theBoard)
     print('Turn for ' + turn + '. Move on which space?')
@@ -127,7 +128,7 @@ for i in range(9):
 
     # input system:
     while True:
-        move = eval(input("Enter your move (1-9)"))
+        move = eval(input("Enter your move (1-9): "))
         if move in possibleMoves.keys():
             played_move = move
             move = possibleMoves.get(move)
