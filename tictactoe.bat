@@ -1,0 +1,1 @@
+@py.exe C:\Users\Morah\PycharmProjects\Automate-the-boring-stuff\personalised_tictactoe.py %*
