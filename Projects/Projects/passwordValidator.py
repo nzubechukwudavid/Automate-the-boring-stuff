@@ -56,7 +56,7 @@ while passwordIsValid is False:
 
     # Check if all conditions are met
     x = list(isvalid.values())
-    if [x[0]] * len(x) == x:
+    if [True, True, True, True] == x:
         passwordIsValid = True
     else:
         print("Try again.\n")
