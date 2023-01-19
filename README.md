@@ -3,4 +3,4 @@ automate the boring stuff with python
 
 Projects
 * Phone Number and Email Extractor
-    
+* Password Validator
