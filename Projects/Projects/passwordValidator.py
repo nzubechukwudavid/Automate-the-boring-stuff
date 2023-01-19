@@ -16,6 +16,7 @@ Your password should:
 * Have at least one digit.""")
 
 passwordIsValid = False
+trueCondition = [True, True, True, True]
 
 while passwordIsValid is False:
     sample = input("Enter your password: ")
@@ -56,7 +57,7 @@ while passwordIsValid is False:
 
     # Check if all conditions are met
     x = list(isvalid.values())
-    if [True, True, True, True] == x:
+    if trueCondition is x:
         passwordIsValid = True
     else:
         print("Try again.\n")
