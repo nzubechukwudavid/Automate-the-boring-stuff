@@ -81,4 +81,3 @@ for quizNum in range(35):
         answerKeyFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answerOptions.index(correctAnswer)]))
     quizFile.close()
     answerKeyFile.close()
-
