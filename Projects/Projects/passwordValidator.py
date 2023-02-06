@@ -14,7 +14,8 @@ Your password should:
 * Be at least 8 characters long.
 * Contain both uppercase and lowercase letters.
 * Have at least one digit.""")
-
+# initialize variables
+sample = 0
 passwordIsValid = False
 trueCondition = [True, True, True, True]
 
@@ -64,3 +65,4 @@ while passwordIsValid is False:
 
 
 print(sample, "is a Strong Password")
+                                               
