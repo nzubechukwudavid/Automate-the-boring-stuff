@@ -5,6 +5,7 @@ Create a Mad Libs program that reads in text files and lets the user add
 their own text anywhere the word ADJECTIVE, NOUN, ADVERB, or VERB
 appears in the text file
 """
+import os
 #   Open the text file and read its contents
 #   identify any adjective, noun, adverb or verb
 #   prompt the user and replace the adjectives/ nouns / verbs / adverbs
@@ -20,12 +21,22 @@ nounRegex = re.compile(r'noun', re.IGNORECASE)
 verbRegex = re.compile(r'verb', re.IGNORECASE)
 adverbRegex = re.compile(r'adverb', re.IGNORECASE)
 
-madLibText = adjectiveRegex.sub(input("Enter an Adjective: \n"), madLibText)
-madLibText = nounRegex.sub(input("Enter a Noun: \n"), madLibText)
-madLibText = verbRegex.sub(input("Enter a verb: \n"), madLibText)
-madLibText = adverbRegex.sub(input("Enter an Adverb: \n"), madLibText)
+madLibText = adjectiveRegex.sub(input("Enter an Adjective: \n"), madLibText) if adjectiveRegex.match(madLibText) else madLibText
+madLibText = nounRegex.sub(input("Enter a Noun: \n"), madLibText) if nounRegex.match(madLibText) else madLibText
+madLibText = verbRegex.sub(input("Enter a verb: \n"), madLibText) if verbRegex.match(madLibText) else madLibText
+madLibText = adverbRegex.sub(input("Enter an Adverb: \n"), madLibText) if adverbRegex.match(madLibText) else madLibText
 
+# TODO A problem above is that i cant manage situations where the user may need to
+# enter more than one different type of word. for instance when there is
+# more than one instance of noun in the madlibs challenge/text
 
+# save result to a new file
+os.chdir(r'C:\Users\Morah\Documents\madlibs\solutions')
+solutionFile = open(r'solution1.txt', 'w')
+solutionFile.write(madLibText)
+
+madLibSample.close()
+solutionFile.close()
 
 
 
