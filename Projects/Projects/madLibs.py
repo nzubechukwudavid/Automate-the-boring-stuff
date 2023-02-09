@@ -21,10 +21,14 @@ nounRegex = re.compile(r'noun', re.IGNORECASE)
 verbRegex = re.compile(r'verb', re.IGNORECASE)
 adverbRegex = re.compile(r'adverb', re.IGNORECASE)
 
-madLibText = adjectiveRegex.sub(input("Enter an Adjective: \n"), madLibText) if adjectiveRegex.match(madLibText) else madLibText
-madLibText = nounRegex.sub(input("Enter a Noun: \n"), madLibText) if nounRegex.match(madLibText) else madLibText
-madLibText = verbRegex.sub(input("Enter a verb: \n"), madLibText) if verbRegex.match(madLibText) else madLibText
-madLibText = adverbRegex.sub(input("Enter an Adverb: \n"), madLibText) if adverbRegex.match(madLibText) else madLibText
+if adjectiveRegex.match(madLibText) is not None:
+    madLibText = adjectiveRegex.sub(input("Enter an Adjective: \n"), madLibText)
+if nounRegex.match(madLibText) is not None:
+    madLibText = nounRegex.sub(input("Enter a Noun: \n"), madLibText)
+if verbRegex.match(madLibText) is not None:
+    madLibText = verbRegex.sub(input("Enter a verb: \n"), madLibText)
+if adverbRegex.match(madLibText) is not None:
+    madLibText = adverbRegex.sub(input("Enter an Adverb: \n"), madLibText)
 
 # TODO A problem above is that i cant manage situations where the user may need to
 # enter more than one different type of word. for instance when there is
@@ -35,11 +39,6 @@ os.chdir(r'C:\Users\Morah\Documents\madlibs\solutions')
 solutionFile = open(r'solution1.txt', 'w')
 solutionFile.write(madLibText)
 
+# close files
 madLibSample.close()
 solutionFile.close()
-
-
-
-
-
-
