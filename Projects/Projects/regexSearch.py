@@ -9,6 +9,7 @@ import os
 
 # Function to get all .txt files in a folder.
 def getFiles(file_path):
+    os.chdir(file_path)
     folder_content = os.listdir(file_path)
     txt_file_list = []
     for fileName in folder_content:
@@ -30,8 +31,9 @@ def searchFiles(txt_file_list):
     for file in txt_file_list:
         match_found = False
         print(f"Scanning file: {file}...\n")
-        content = file.readlines()
-        file.close()
+        file_object = open(file)
+        content = file_object.readlines()
+        file_object.close()
 
         for line in content:
             match = searchTermRegex.search(line)
@@ -45,3 +47,4 @@ def searchFiles(txt_file_list):
 
 searchTermRegex, filePath = getQuery()
 txtFileList = getFiles(filePath)
+searchFiles(txtFileList)
