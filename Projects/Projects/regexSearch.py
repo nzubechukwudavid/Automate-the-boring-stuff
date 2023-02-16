@@ -19,6 +19,29 @@ def getFiles(file_path):
 
 # Function to obtain the regex from the user.
 def getQuery():
+    directory = input("Enter the directory you would like to scan.")
     query = input("Enter the regular expression you would like to search for.\n--> ")
     regex = re.compile(query, re.IGNORECASE)
-    return regex
+
+    return regex, directory
+
+
+def searchFiles(txt_file_list):
+    for file in txt_file_list:
+        match_found = False
+        print(f"Scanning file: {file}...\n")
+        content = file.readlines()
+        file.close()
+
+        for line in content:
+            match = searchTermRegex.search(line)
+
+            if match is not None:
+                match_found = True
+                print(f"match found in: line {content.index(line) + 1}")
+        if not match_found:
+            print(f"No matches in {file}")
+
+
+searchTermRegex, filePath = getQuery()
+txtFileList = getFiles(filePath)
