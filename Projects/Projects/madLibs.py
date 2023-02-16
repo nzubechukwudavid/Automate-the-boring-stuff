@@ -24,6 +24,9 @@ while True:
         print("Enter a Verb: ")
     elif match.group().upper() == 'ADVERB':
         print("Enter an Adverb: ")
+    word = input()
+    sample = sample.replace(match.group(), word, 1)
 
+newFile = open(r'C:\Users\Morah\Documents\madlibs\solutions\solution1.txt')
 
 
