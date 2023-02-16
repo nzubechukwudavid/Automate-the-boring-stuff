@@ -27,6 +27,7 @@ while True:
     word = input()
     sample = sample.replace(match.group(), word, 1)
 
-newFile = open(r'C:\Users\Morah\Documents\madlibs\solutions\solution1.txt')
-
+newFile = open(r'C:\Users\Morah\Documents\madlibs\solutions\solution1.txt', 'w')
+newFile.write(sample)
+newFile.close()
 
