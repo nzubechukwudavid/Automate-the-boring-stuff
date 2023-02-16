@@ -5,12 +5,14 @@ Create a Mad Libs program that reads in text files and lets the user add
 their own text anywhere the word ADJECTIVE, NOUN, ADVERB, or VERB
 appears in the text file
 """
+
+# will someday expand this program to interact with a broad range of files as i learn more
 import re
 file = open(r'C:\Users\Morah\Documents\madlibs\challenges\challenge1.txt')
 sample = file.read()
 file.close()
 
-regex = re.comple(r'ADJECTIVE|NOUN|VERB|ADVERB', re.IGNORECASE)
+regex = re.compile(r'ADJECTIVE|NOUN|VERB|ADVERB', re.IGNORECASE)
 
 while True:
     match = regex.search(sample)
@@ -30,4 +32,3 @@ while True:
 newFile = open(r'C:\Users\Morah\Documents\madlibs\solutions\solution1.txt', 'w')
 newFile.write(sample)
 newFile.close()
-
