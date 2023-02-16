@@ -27,6 +27,7 @@ def getQuery():
     return regex, directory
 
 
+# Main file searching function.
 def searchFiles(txt_file_list):
     for file in txt_file_list:
         match_found = False
